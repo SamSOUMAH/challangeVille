@@ -2,12 +2,12 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'react-bootstrap';
 
- const Ville = ({id, nom, photo, OnDelete}) => {
+ const Ville = ({id, nom, photo, SupVille}) => {
     return (
        <li className="list-group-item border rounded-3 bg-success" >
         <Button 
-        variant="light"
-         onClick={()=>OnDelete(id)} 
+         variant="light"
+         onClick={()=>SupVille(id)} 
          className="float-end"><i className="fas fa-trash-alt"></i></Button>
         <span>
         <h1 className="text-light">{nom}</h1>
