@@ -1,32 +1,31 @@
+import React from 'react'
+import { useState, useRef } from 'react'
+import ListeTitre from './ListeTitre'
+import AjouElem from './AjouElem'
 
-import './App.css';
-import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import ListVille from './ListVille';
 
-function App() {
-  const [villes, setVilles] = useState([{id:1, nom:"TANGER", photo:"./Tanger.jpg"}, {id:2, nom:"CASABLANCA", photo:"./casablanca.jpg"}, {id:3,nom:"RABAT", photo:"./Rabat.jpg"}])
-  
-   const SupVilleById=(idVille)=>{
-     
-   let NouVille = [...villes];
-   NouVille = NouVille.filter((_, id) =>id != idVille);
-  setVilles([...NouVille]);
 
-  }
+const App = () => {
+  const [Lestitres, setLestitres] = useState([{id:1, titre:"Bonjour"}, {id:2, titre:"Salut"}, {id:3, titre:"Nuit"}])
+  const suppElement=(idTite)=>{
+    if (window.confirm("VOULEZ VOUS SUPPRIMER?")===false) return 
 
- 
+    let nouvellle=[...Lestitres]
+    nouvellle=nouvellle.filter((t)=>t.id!=idTite)
+    setLestitres([...nouvellle])
+  } 
+
+
   return (
-    <div className="App">
-      <h1 className="d-flex justify-content-center">VILLES DU MAROC</h1>
-    
-      <ListVille 
-      villes={villes}
-      SupVille={SupVilleById}
-     
-      />
+    <div>
+      <AjouElem />
+      
+ <ListeTitre
+  Lestitres={Lestitres}
+  suppElem={suppElement}
+ />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
