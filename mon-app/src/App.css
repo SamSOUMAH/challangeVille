@@ -1,5 +1,31 @@
-.nom{
-    background-color: green;
+
+.appDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input{
     width: 320px;
-    height: 320px;
+    height: 35px;
+    border: 1px solid rgb(11, 39, 39);
+    border-radius: 5px;
+}
+
+.headInput{
+    display: flex;
+    justify-content: center;
+    width: 420px;
+    height: 50px;
+    padding: 5px;
+    
+}
+.boutton{
+    background-color:aqua;
+    width:40px;
+    height: 40px;
+}
+
+.supp{
+    background-color: red;
 }
