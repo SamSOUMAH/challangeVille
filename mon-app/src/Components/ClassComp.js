@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 
 export default class ClassComp extends Component {
-    constructor(){
-        super()
-        this.state={
-            PrixUn:500
-        }
-    }
-
+constructor(){
+    super()
+    this.state={compteur:500}
+}
     componentDidMount(){
         console.log("Je suis composant qui affiche le html")
     }
@@ -18,10 +15,9 @@ export default class ClassComp extends Component {
     render() {
         return (
             <div>
-               {this.state.PrixUn}
-                <br/>
-                bonjour je suis une class Component
-                <button onClick={()=>this.setState({PrixUn:this.state.PrixUn +500})}> Vendre</button> 
+            {this.state.compteur}<br/>
+              JE SUIS LE VENDEUR
+              <button onClick={()=>this.setState({compteur:this.state.compteur+500})}>Acheter</button>
             </div>
         )
     }
