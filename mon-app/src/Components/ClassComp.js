@@ -20,9 +20,8 @@ export default class ClassComp extends Component {
             <div>
                {this.state.PrixUn}
                 <br/>
-                bonjour
-                <button onClick={()=>this.setState({PrixUn:this.state.PrixUn +500})}> Vendre</button>
-               
+                bonjour je suis une class Component
+                <button onClick={()=>this.setState({PrixUn:this.state.PrixUn +500})}> Vendre</button> 
             </div>
         )
     }
