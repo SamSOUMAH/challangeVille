@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import ClassComp from './Components/ClassComp'
+import FunctComp from './FunctComp'
 
 const App = () => {
   const [show, setShow]=useState(true)
@@ -8,7 +8,7 @@ const App = () => {
   return (
     
     <div className="appDiv">
-     {show===true?<ClassComp/>:null}
+     {show===true? <FunctComp />:null}
      <button onClick={()=>setShow(!show)}> {show===true? <button>X</button> : <button>+</button>}</button>
      
     </div>
