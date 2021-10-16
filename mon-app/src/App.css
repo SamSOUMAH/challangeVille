@@ -1,31 +1,12 @@
-
-.appDiv{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-input{
+.divA{
     width: 320px;
-    height: 35px;
-    border: 1px solid rgb(11, 39, 39);
+    height: 320px;
+    border: 1px solid aqua;
     border-radius: 5px;
+    background-color:green;
 }
-
-.headInput{
-    display: flex;
-    justify-content: center;
-    width: 420px;
-    height: 50px;
-    padding: 5px;
-    
+.bouton{
+    border: none;
 }
-.boutton{
-    background-color:aqua;
-    width:40px;
-    height: 40px;
-}
-
-.supp{
-    background-color: red;
-}
+.bout{background-color: red;}
+.Acheter{background-color: green;}

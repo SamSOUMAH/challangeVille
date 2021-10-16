@@ -1,20 +1,25 @@
- import { useState, useEffect} from "react";
+import './App.css'
+import { useState, useEffect} from "react";
+
+
 
  const FunctComp = () => {
-     const [Compteur, setCompteur] = useState(500)
+    const [Compteur, setCompteur] = useState(0)
 
-     useEffect(()=>{
+    useEffect(()=>{
         console.log('JE SUIS componentDidMount')
-        return()=>console.log('j\'ai fini')},
-        
-        [])
+        return()=>console.log('j\'ai fini, je quitte ')
+    },[])
 
-     useEffect(()=>{if(Compteur!=0)console.log('Je change le state')})
+    useEffect(()=>{
+       if(Compteur!==0) console.log('je suis componentDidUpdate')
+    })
 
     return (
-        <div>
+        <div className="divA">
             {Compteur}
-            <button onClick={()=>setCompteur(Compteur+500)}>Add</button>
+            <button onClick={()=>setCompteur(Compteur+500)}>ADD</button>
+           
         </div>
     )
 }

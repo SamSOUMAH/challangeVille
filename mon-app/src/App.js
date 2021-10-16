@@ -6,11 +6,9 @@ const App = () => {
   const [show, setShow]=useState(true)
 
   return (
-    
     <div className="appDiv">
-     {show===true? <FunctComp />:null}
-     <button onClick={()=>setShow(!show)}> {show===true? <button>X</button> : <button>+</button>}</button>
-     
+     {show===true?<FunctComp />:null}
+     <button className="bouton" onClick={()=>setShow(!show)}> {show===true? <button className="bout">X</button> : <button className="Acheter">Acheter</button>}</button> 
     </div>
   )
 }
