@@ -3,7 +3,7 @@ import { useState, useEffect} from "react";
 
 
 
- const FunctComp = () => {
+ const Alkhadar = () => {
     const [Compteur, setCompteur] = useState(0)
 
     useEffect(()=>{
@@ -18,11 +18,12 @@ import { useState, useEffect} from "react";
     return (
         <div className="divA">
             {Compteur}
+            <div>
             <button onClick={()=>setCompteur(Compteur+500)}>ADD</button>
-           
+            </div>  
         </div>
     )
 }
-export default FunctComp;
+export default Alkhadar;
 
 

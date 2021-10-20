@@ -1,12 +1,19 @@
 .divA{
+    display: flex;
     width: 320px;
-    height: 320px;
+    height: 720px;
     border: 1px solid aqua;
     border-radius: 5px;
-    background-color:green;
-}
+    background-color:#ffff;}
+    
 .bouton{
-    border: none;
-}
+    border: none;}
+
 .bout{background-color: red;}
+
 .Acheter{background-color: green;}
+
+.appDiv{
+    display:flex;
+    justify-content: end;
+}
