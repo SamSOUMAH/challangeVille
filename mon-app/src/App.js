@@ -1,19 +1,17 @@
 import React from 'react'
-import { useState } from 'react'
-import Alkhadar from './Alkhadar'
+import AppRouter from './Routers/AppRouter';
+
+
 
 const App = () => {
-  const [show, setShow]=useState(true)
 
   return (
-    <div className="appDiv">
-      
-     {show===true?<Alkhadar />:null}
-     <div>
-     <button className="bouton" onClick={()=>setShow(!show)}> {show===true? <button className="bout">X</button> : <button className="Acheter">Acheter</button>}</button> 
-     </div>
+    <div >
+     
+   <AppRouter></AppRouter>
+     
     </div>
   )
 }
 
-export default App
+ export default App
