@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
     return (
         <div>
-            je suis MovieDetailePage<hr/>
+              JE SUIS "MovieDetailePage"<br/>
            <Link to={"/"} ><Button><i className="fas fa-undo"></i></Button></Link>
         </div>
     )
