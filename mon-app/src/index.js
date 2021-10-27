@@ -1,17 +1,13 @@
 import { Task } from "./models/task";
-
+import { createStore } from 'redux'
 const initialState = [
   new Task(1, "task 1"),
   new Task(2, "task 2"),
-  new Task(3, "task 3")
-]
+  new Task(3, "task 3")]
 
 const TYPE_TODO_ADD="todo/add"
-
-const TodoReducer = (action={},prevState=initialState ) => {
-
-  switch (action.type) {
-   
+const TodoReducer = (prevState=initialState, action={}) => {
+  switch (action.type){ 
     case TYPE_TODO_ADD:
       return [
         ...prevState,
@@ -25,21 +21,31 @@ const TodoReducer = (action={},prevState=initialState ) => {
   }
 }
 
-let newState1 = 
-TodoReducer(
+const store = createStore(TodoReducer)
+console.log(store.getState())
+//ajout de nouveau element 4
+store.dispatch(
   {
-    type : TYPE_TODO_ADD,
-    payload : {titleTask:"task 4"}
+    type:TYPE_TODO_ADD,
+    payload:{titleTask:"task 4"}
   }
 )
-console.log(newState1)
+console.log(store.getState())
 
-let newState2 = 
-TodoReducer(
+//ajout de nouveau element 5
+store.dispatch(
   {
-    type : TYPE_TODO_ADD,
-    payload : {titleTask:"task 5"}
-  },
-  newState1
+    type:TYPE_TODO_ADD,
+    payload:{titleTask: "task 5"}
+  }
 )
-console.log(newState2)
+console.log(store.getState())
+
+//ajout de nouveau element 6
+store.dispatch(
+  {
+    type:TYPE_TODO_ADD,
+    payload:{titleTask: "task 6"}
+  }
+)
+console.log(store.getState())
