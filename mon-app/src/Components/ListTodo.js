@@ -1,31 +1,41 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { TYPE_TODO_DELETE } from '../Store/types/todo'
-import ItemTodo from './ItemTodo'
 
-const ListTodo = ({ todos,deleteTaskById }) => {
+
+import React from 'react'
+import ItemTodo from './ItemTodo'
+import { connect } from 'react-redux'
+import { TYPE_TODO_DELETE, TYPE_TODO_TOGGLE } from '../Store/types/todo'
+
+const ListTodo = ({ todos, DeleteTask,ToggleTask }) => {
+
+
+
     return (
         <ul>
-            {todos.map(t => 
-            <ItemTodo 
-            key={t.id} 
-            task={t} 
-            onDeleteTask={deleteTaskById}    
-            />)}
+            {todos.map(t =>
+                <ItemTodo
+                    key={t.id}
+                    task={t}
+                    onDelete={DeleteTask}
+                    onToggle={ToggleTask}
+                />)}
         </ul>
     )
 }
 
-const ListTodoStore = connect(
-    (state)=>({todos:state}),
-    (dispatch)=>({
-        deleteTaskById:
-                (taskId)=>dispatch({
-                    type:TYPE_TODO_DELETE,
-                    payload:{taskId}
-                })
+const list = connect(
 
+    state => ({ todos: state }),
+    dispatch => ({
+        DeleteTask: taskId => dispatch({
+            type: TYPE_TODO_DELETE,
+            payload: { taskId }
+        }),
+        ToggleTask: taskId => dispatch({
+            type: TYPE_TODO_TOGGLE,
+            payload: { taskId }
+        })
     })
 )
 
-export default ListTodoStore(ListTodo)
+
+export default list(ListTodo)

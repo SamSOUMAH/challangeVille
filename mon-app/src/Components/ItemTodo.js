@@ -1,22 +1,29 @@
-import React from 'react'
-import { Task } from '../models/task'
+const ItemTodo = ({ task, onDelete, onToggle }) => {
+	
 
-const ItemTodo = ({task=new Task(),onDeleteTask}) => {
-    const handleClick = ()=>{
-        if(window.confirm("Are you sure ? ")===false) return 
-        onDeleteTask(task.id)
+    const onDeleteTast = () => {
+        if (window.confirm("Are You sur delete") == true)
+            onDelete(task.id)
     }
+    const handleChange = ()=>{
+        onToggle(task.id)
+    }
+
+
     return (
         <li>
-            <input 
-            type="checkbox" 
-            value={task.isCompleted}/>
-            <span>{task.title}</span>
-            <button 
-                onClick={handleClick}
+            <input
+                onChange={handleChange}
+                type="checkbox"
+                value={task.isCompleted}/>
+
+            <span className={task.isCompleted?"text-decoration-line-through":"" }>
+                {task.title}</span>
+            <button onClick={onDeleteTast}
             >DEL</button>
         </li>
     )
 }
+
 
 export default ItemTodo
